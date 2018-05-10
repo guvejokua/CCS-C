@@ -1,0 +1,18 @@
+*** Error 18 "trafik.c" Line 1(9,20): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\Devices\16f877a.h"
+    Not in "C:\Program Files (x86)\PICC\Drivers\16f877a.h"
+    Not in local "16f877a.h"
+    Not in local "D:\Google Drive\Workspace\CCS-C\trafikPIC\16f877a.h"
+    Not in last "16f877a.h"
+    Not in project "D:\Google Drive\Workspace\CCS-C\trafikPIC\16f877a.h"
+*** Error 128 "trafik.c" Line 3(7,69): A #DEVICE required before this line
+*** Error 18 "trafik.c" Line 5(10,17): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\Devices\lcd.c"
+    Not in "C:\Program Files (x86)\PICC\Drivers\lcd.c"
+    Not in local "lcd.c"
+    Not in local "D:\Google Drive\Workspace\CCS-C\trafikPIC\lcd.c"
+    Not in last "lcd.c"
+    Not in project "D:\Google Drive\Workspace\CCS-C\trafikPIC\lcd.c"
+*** Error 128 "trafik.c" Line 5(10,17): A #DEVICE required before this line
+      4 Errors,  0 Warnings.
+Build Failed.

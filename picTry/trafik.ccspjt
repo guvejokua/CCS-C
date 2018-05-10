@@ -12,8 +12,8 @@ Type=4
 [mru-list]
 1=trafik.c
 [Opened Files]
-1=new.c
-2=trafik.c
+1=trafik.c
+2=
 3=
 [Units]
 Count=1

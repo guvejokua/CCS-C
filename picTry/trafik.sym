@@ -1,0 +1,106 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     lcdlat
+008     PSP_DATA
+008     lcd
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+021-023 MAIN.yolapin
+024-026 MAIN.yolbpin
+027     lcd_init.i
+027     yoldurum.mod
+027     MAIN.@SCRATCH1
+027     @PSTRINGC7_647.@SCRATCH1
+028-029 yoldurum.yol1pin
+028     lcd_init.@SCRATCH1
+028     @PSTRINGC7_647.@SCRATCH2
+029     @PSTRINGC7_647.@SCRATCH3
+02A-02B yoldurum.yol2pin
+02A     @PSTRINGC7_647.@SCRATCH4
+02B     lcd_putc.c
+02C     @delay_ms1.P1
+02C     yoldurum.yolak
+02C     lcd_gotoxy.x
+02D     lcd_gotoxy.y
+02D     yoldurum.yolas
+02E     lcd_gotoxy.address
+02E     yoldurum.yolay
+02F     yoldurum.yolbk
+02F     lcd_gotoxy.@SCRATCH1
+030     lcd_send_byte.address
+030     yoldurum.yolbs
+031     lcd_send_byte.n
+031     yoldurum.yolby
+032     lcd_read_byte.low
+032     @WRITEBITA.P1
+032     lcd_send_byte.@SCRATCH1
+033     lcd_read_byte.high
+033     lcd_send_nibble.n
+033     @WRITEBITA.P1
+034-035 @WRITEBITA.P1
+034     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+088     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const670.call
+00001A  @delay_ms1
+00002F  lcd_send_nibble
+00003B  lcd_read_nibble
+000041  lcd_send_byte
+000047  lcd_read_byte
+000081  lcd_init
+0000B4  lcd_gotoxy
+0000C6  lcd_putc
+0000F2  @PSTRINGC7_647
+00013F  @WRITEBITA
+00015F  yoldurum
+000389  MAIN
+000389  @cinit1
+000390  @cinit2
+
+Project Directory:
+    C:\Users\Ali Ünsal\Desktop\Bahar Þenlikleri Proje I Trafik Iþýk Uygulamasý\trafikPIC\
+
+Project Files:
+    trafik.c                                                [22-Nis-17 14:53  CRC=3FFDD333]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [21-Haz-13 16:04  CRC=4E65664C]
+
+Source signature=3380480B
+
+Units:
+    trafik (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   trafik.xsym
+    Errors:      trafik.err
+    Ext Symbols: trafik.esym
+    INHX8:       trafik.hex
+    Symbols:     trafik.sym
+    List:        trafik.lst
+    Debug/COFF:  trafik.cof
+    Project:     trafik.ccspjt
+    Call Tree:   trafik.tre
+    Statistics:  trafik.STA

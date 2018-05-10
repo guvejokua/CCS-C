@@ -1,0 +1,16 @@
+[PROJECT]
+Target=D:\Google Drive\Workspace\CCS-C\works\source\main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.015
+Compiler=PCM
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[D:\Google Drive\Workspace\CCS-C\works\source\main]
+Type=4
+[mru-list]
+1=main.c
+[Units]
+Count=1
+1=main (main)
