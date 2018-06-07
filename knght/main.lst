@@ -1,0 +1,226 @@
+CCS PCM C Compiler, Version 5.015, 5967               12-May-18 23:25
+
+               Filename:   D:\Google Drive\Workspace\CCS-C\knght\main.lst
+
+               ROM used:   172 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   8 (2%) at main() level
+                           12 (3%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   045
+0003:  NOP
+.................... #include <16f877a.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+0004:  BCF    0A.0
+0005:  BCF    0A.1
+0006:  BCF    0A.2
+0007:  ADDWF  02,F
+0008:  RETLW  30
+0009:  RETLW  31
+000A:  RETLW  32
+000B:  RETLW  33
+000C:  RETLW  34
+000D:  RETLW  35
+000E:  RETLW  36
+000F:  RETLW  37
+0010:  MOVF   23,W
+0011:  ANDLW  07
+0012:  MOVWF  77
+0013:  RRF    23,W
+0014:  MOVWF  78
+0015:  RRF    78,F
+0016:  RRF    78,F
+0017:  MOVLW  1F
+0018:  ANDWF  78,F
+0019:  MOVF   78,W
+001A:  ADDWF  25,W
+001B:  MOVWF  04
+001C:  BCF    03.7
+001D:  BTFSC  26.0
+001E:  BSF    03.7
+001F:  CLRF   78
+0020:  INCF   78,F
+0021:  INCF   77,F
+0022:  GOTO   024
+0023:  RLF    78,F
+0024:  DECFSZ 77,F
+0025:  GOTO   023
+0026:  MOVF   24,F
+0027:  BTFSC  03.2
+0028:  GOTO   02C
+0029:  MOVF   78,W
+002A:  IORWF  00,F
+002B:  GOTO   02F
+002C:  COMF   78,F
+002D:  MOVF   78,W
+002E:  ANDWF  00,F
+002F:  RETURN
+....................  
+.................... #list 
+....................  
+....................  
+.................... #fuses XT,NOWDT,NOPROTECT,NOBROWNOUT,NOLVP,NOPUT,NOWRT,NODEBUG,NOCPD 
+.................... #use delay(clock=4M) 
+0030:  MOVLW  23
+0031:  MOVWF  04
+0032:  BCF    03.7
+0033:  MOVF   00,W
+0034:  BTFSC  03.2
+0035:  GOTO   044
+0036:  MOVLW  01
+0037:  MOVWF  78
+0038:  CLRF   77
+0039:  DECFSZ 77,F
+003A:  GOTO   039
+003B:  DECFSZ 78,F
+003C:  GOTO   038
+003D:  MOVLW  4A
+003E:  MOVWF  77
+003F:  DECFSZ 77,F
+0040:  GOTO   03F
+0041:  GOTO   042
+0042:  DECFSZ 00,F
+0043:  GOTO   036
+0044:  RETURN
+....................  
+.................... const int led[] = {pin_b0, pin_b1, pin_b2, pin_b3, pin_b4, pin_b5, pin_b6, pin_b7}; 
+.................... int i; 
+.................... int j; 
+.................... void main() 
+0045:  MOVF   03,W
+0046:  ANDLW  1F
+0047:  MOVWF  03
+0048:  BSF    03.5
+0049:  BSF    1F.0
+004A:  BSF    1F.1
+004B:  BSF    1F.2
+004C:  BCF    1F.3
+004D:  MOVLW  07
+004E:  MOVWF  1C
+004F:  BCF    03.7
+.................... { 
+....................    for(j = 0; ;) 
+0050:  BCF    03.5
+0051:  CLRF   21
+....................    { 
+....................       i = 0; 
+0052:  CLRF   20
+....................       for(i = 0; i < 8; i++) { 
+0053:  CLRF   20
+0054:  MOVF   20,W
+0055:  SUBLW  07
+0056:  BTFSS  03.0
+0057:  GOTO   080
+....................          output_high(led[i]); 
+0058:  MOVF   20,W
+0059:  CALL   004
+005A:  MOVWF  22
+005B:  MOVWF  23
+005C:  MOVLW  01
+005D:  MOVWF  24
+005E:  CLRF   26
+005F:  CLRF   25
+0060:  CALL   010
+0061:  MOVF   22,W
+0062:  MOVWF  23
+0063:  CLRF   24
+0064:  CLRF   26
+0065:  MOVLW  80
+0066:  MOVWF  25
+0067:  CALL   010
+....................          delay_ms(300); 
+0068:  MOVLW  02
+0069:  MOVWF  22
+006A:  MOVLW  96
+006B:  MOVWF  23
+006C:  CALL   030
+006D:  DECFSZ 22,F
+006E:  GOTO   06A
+....................          output_low(led[i]); 
+006F:  MOVF   20,W
+0070:  CALL   004
+0071:  MOVWF  22
+0072:  MOVWF  23
+0073:  CLRF   24
+0074:  CLRF   26
+0075:  CLRF   25
+0076:  CALL   010
+0077:  MOVF   22,W
+0078:  MOVWF  23
+0079:  CLRF   24
+007A:  CLRF   26
+007B:  MOVLW  80
+007C:  MOVWF  25
+007D:  CALL   010
+007E:  INCF   20,F
+007F:  GOTO   054
+....................       } 
+....................       for(i = 7; i >= 0; i--) { 
+0080:  MOVLW  07
+0081:  MOVWF  20
+....................          output_high(led[i]); 
+0082:  MOVF   20,W
+0083:  CALL   004
+0084:  MOVWF  22
+0085:  MOVWF  23
+0086:  MOVLW  01
+0087:  MOVWF  24
+0088:  CLRF   26
+0089:  CLRF   25
+008A:  CALL   010
+008B:  MOVF   22,W
+008C:  MOVWF  23
+008D:  CLRF   24
+008E:  CLRF   26
+008F:  MOVLW  80
+0090:  MOVWF  25
+0091:  CALL   010
+....................          delay_ms(300); 
+0092:  MOVLW  02
+0093:  MOVWF  22
+0094:  MOVLW  96
+0095:  MOVWF  23
+0096:  CALL   030
+0097:  DECFSZ 22,F
+0098:  GOTO   094
+....................          output_low(led[i]); 
+0099:  MOVF   20,W
+009A:  CALL   004
+009B:  MOVWF  22
+009C:  MOVWF  23
+009D:  CLRF   24
+009E:  CLRF   26
+009F:  CLRF   25
+00A0:  CALL   010
+00A1:  MOVF   22,W
+00A2:  MOVWF  23
+00A3:  CLRF   24
+00A4:  CLRF   26
+00A5:  MOVLW  80
+00A6:  MOVWF  25
+00A7:  CALL   010
+00A8:  DECF   20,F
+00A9:  GOTO   082
+....................       } 
+00AA:  GOTO   052
+....................    } 
+.................... } 
+00AB:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F39   XT NOWDT NOPUT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

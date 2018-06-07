@@ -1,0 +1,17 @@
+읕main
+   읕main  0/103  Ram=1
+      쳐@cinit1  (Inline)  Ram=0
+      쳐@const621  0/12  Ram=0
+      쳐@WRITEBITA  0/32  Ram=6
+      쳐@WRITEBITA  0/32  Ram=6
+      쳐@delay_ms1  0/21  Ram=1
+      쳐@const621  0/12  Ram=0
+      쳐@WRITEBITA  0/32  Ram=6
+      쳐@WRITEBITA  0/32  Ram=6
+      쳐@const621  0/12  Ram=0
+      쳐@WRITEBITA  0/32  Ram=6
+      쳐@WRITEBITA  0/32  Ram=6
+      쳐@delay_ms1  0/21  Ram=1
+      쳐@const621  0/12  Ram=0
+      쳐@WRITEBITA  0/32  Ram=6
+      읕@WRITEBITA  0/32  Ram=6
